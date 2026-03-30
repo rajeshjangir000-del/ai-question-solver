@@ -124,7 +124,7 @@ export default function App() {
         prompt: prompt
       };
 
-      const response = await fetch('http://localhost:3001/api/solve', {
+      const response = await fetch('/api/solve', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -147,7 +147,7 @@ export default function App() {
     } catch (error) {
       console.error("Error connecting to solving API:", error);
       setErrorMessage(`Proxy Error: ${error.message}`);
-      setSolution("Oops! Both the primary and fallback AI models failed or the local server is down. Please verify your backend server is running on port 3001.");
+      setSolution("Oops! Both the primary and fallback AI models failed or the server is down. Please verify your backend server is running.");
     } finally {
       setIsLoading(false);
     }
